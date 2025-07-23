@@ -1,0 +1,30 @@
+.toast {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toast-container {
+    right: .75rem;
+    left: auto !important;
+    width: auto !important;
+    max-width: 380px;
+}
+
+@media (max-width: 576px) {
+    .toast-container {
+        width: auto !important;
+        left: auto !important;
+        right: 0 !important;
+    }
+}

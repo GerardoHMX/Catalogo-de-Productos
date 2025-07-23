@@ -1,0 +1,19 @@
+<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1080; max-width: 380px;">
+    <div *ngFor="let toast of toasts" class="toast show fade border rounded shadow-sm mb-2 bg-white" role="alert"
+        aria-live="assertive" aria-atomic="true" style="min-width: 340px; max-width: 380px;">
+        <div class="toast-header d-flex align-items-center gap-2">
+            <svg class="me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="10" [attr.fill]="getToastColor(toast.type)" />
+                <text x="10" y="15" text-anchor="middle" font-size="14" fill="white">
+                    {{ getToastEmoji(toast.type) }}
+                </text>
+            </svg>
+            <strong class="me-auto text-capitalize">{{ toast.title }}</strong>
+            <small class="text-muted">Ahora</small>
+            <button type="button" class="btn-close" aria-label="Cerrar" (click)="dismiss(toast.id)"></button>
+        </div>
+        <div class="toast-body">
+            {{ toast.message }}
+        </div>
+    </div>
+</div>  
